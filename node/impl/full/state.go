@@ -784,10 +784,6 @@ func (a *StateAPI) StateSectorPartition(ctx context.Context, maddr address.Addre
 		return nil, err
 	}
 
-	if found == nil {
-		// XXX: DO WHAT?
-	}
-
 	return found, nil
 }
 

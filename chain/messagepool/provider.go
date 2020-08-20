@@ -70,7 +70,7 @@ func (mpp *mpoolProvider) LoadTipSet(tsk types.TipSetKey) (*types.TipSet, error)
 func (mpp *mpoolProvider) ChainComputeBaseFee(ctx context.Context, ts *types.TipSet) (types.BigInt, error) {
 	baseFee, err := mpp.sm.ChainStore().ComputeBaseFee(ctx, ts)
 	if err != nil {
-		return types.NewInt(0), xerrors.Errorf("computing base fee at %d: %w", ts.Height(), err)
+		return types.NewInt(0), xerrors.Errorf("computing base fee at %s: %w", ts, err)
 	}
 	return baseFee, nil
 }
